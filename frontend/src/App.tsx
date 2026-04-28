@@ -6,8 +6,10 @@ function App() {
 
   return (
     <>
-      Hello World!
       <div className="flex min-h-svh flex-col items-center justify-center">
+        <div className="text-6xl font-bold">
+          Hello World.
+        </div>
         <Button>Test button</Button>
       </div>
     </>
