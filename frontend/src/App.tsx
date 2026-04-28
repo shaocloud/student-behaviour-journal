@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css'
+import { Button } from "@/components/ui/button"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -7,6 +7,9 @@ function App() {
   return (
     <>
       Hello World!
+      <div className="flex min-h-svh flex-col items-center justify-center">
+        <Button>Test button</Button>
+      </div>
     </>
   )
 }
