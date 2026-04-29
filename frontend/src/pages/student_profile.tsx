@@ -16,10 +16,14 @@ import {
     CardFooter,
     CardHeader,
     CardTitle,
- } from "../components/ui/card";
+ } from "@/components/ui/card";
+
+import { useLoaderData } from "react-router";
 
 export default function StudentProfile()
 {
+    const student = useLoaderData();
+
     return(
         <Card>
             <CardHeader>

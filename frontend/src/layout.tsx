@@ -1,13 +1,14 @@
 import { Outlet } from "react-router";
 import { Navbar1 } from "./components/navbar1";
 
+import React from 'react'
+
 function Layout()
 {
     return(
         <>
         <div className="p-8">
-            <Navbar1 />
-            I'm a layout!
+            <Navbar1 />         
             <Outlet />
         </div>
         </>
