@@ -1,13 +1,12 @@
-import { Link, Outlet } from "react-router";
-import Navbar from "./pages/navbar/navbar";
+import { Outlet } from "react-router";
+import { Navbar1 } from "./components/navbar1";
 
 function Layout()
 {
     return(
         <>
         <div className="p-8">
-            <Navbar />
-
+            <Navbar1 />
             I'm a layout!
             <Outlet />
         </div>

@@ -6,6 +6,7 @@ import './index.css'
 import App from './App.tsx'
 import Layout from './layout.tsx'
 import Students from './pages/students.tsx'
+import StudentProfile from './pages/student_profile.tsx'
 
 const router = createBrowserRouter([
   {
@@ -13,7 +14,12 @@ const router = createBrowserRouter([
     Component: Layout,
     children: [
       { index:  true, Component: App },
-      { path: "students", Component: Students }
+      { path: "/students", 
+        children: [
+          { index: true, Component: Students },
+          { path: "/student/:id", Component: StudentProfile }
+      ] },
+
     ]
   },
 ]);
