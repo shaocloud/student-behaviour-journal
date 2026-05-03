@@ -7,15 +7,22 @@ import {
     CardTitle,
  } from "@/components/ui/card";
 
- import { useRouteError } from "react-router";
+ import { useRouteError, isRouteErrorResponse } from "react-router";
  
  export default function ErrorBoundary(){
-    const error : unknown = useRouteError();
+    const error = useRouteError();
+    console.error('Error in ErrorBoundary:', error);
     return(
         <Card>
             <CardHeader>
                 <CardTitle>
-                    {error.message}
+                    {
+                        (isRouteErrorResponse(error) ? error.status : 'An unexpected error occurred.')
+                    }
+                    <br/>
+                    {
+                        String(error)
+                    }
                 </CardTitle>
             </CardHeader>
         </Card>

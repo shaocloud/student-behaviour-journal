@@ -20,25 +20,47 @@ import {
 
 import { useLoaderData } from "react-router";
 
+class Student {
+    id: string;
+    name: string;
+    age: number;
+    grade: number;
+    behaviourHistory: string;
+
+    constructor(id: string, name: string, age: number, grade: number, behaviourHistory: string) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.grade = grade;
+        this.behaviourHistory = behaviourHistory;
+    }
+}
+
 export default function StudentProfile()
 {
-    const student = useLoaderData();
+    const student = useLoaderData() as Student;
 
     return(
-        <Card>
+        <Card className="max-w-lg py-0 sm:flex-row sm:gap-0">
+            <CardContent className='grow-1 px-0'>
+                <img
+                src='https://cdn.shadcnstudio.com/ss-assets/components/card/image-3.png'
+                alt='Banner'
+                className='size-full rounded-l-xl'
+                />
+            </CardContent>
+            <div className='py-10 sm:min-w-54'>          
             <CardHeader>
-                <CardTitle>Student Profile</CardTitle>
+                <CardTitle>{student.name}, {student.age}</CardTitle>
                 <CardDescription>
-                    This is the student profile page.
-                    It will contain information about the student, such as their name, age, grade, and behaviour history.
+                    Student ID: {student.id}
                 </CardDescription>
             </CardHeader>
-            <CardContent>
-                <p>Name: John Doe</p>
-                <p>Age: 10</p>
-                <p>Grade: 5</p>
-                <p>Behaviour History: Good</p>
+            <CardContent className='py-2'>
+                <p>Grade: {student.grade}</p>
+                <p>Behaviour History: {student.behaviourHistory}</p>
             </CardContent>
+            </div>
             <CardFooter>
                 <p>Card footer</p>
             </CardFooter>
