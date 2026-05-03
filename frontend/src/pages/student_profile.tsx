@@ -18,6 +18,8 @@ import {
     CardTitle,
  } from "@/components/ui/card";
 
+import BehTable from "@/components/beh_table";
+
 import { useLoaderData } from "react-router";
 
 class Student {
@@ -41,6 +43,7 @@ export default function StudentProfile()
     const student = useLoaderData() as Student;
 
     return(
+        <div>
         <Card className="max-w-lg py-0 sm:flex-row sm:gap-0">
             <CardContent className='grow-1 px-0'>
                 <img
@@ -65,5 +68,8 @@ export default function StudentProfile()
                 <p>Card footer</p>
             </CardFooter>
         </Card>
+
+        <BehTable />
+        </div>
     )
 }
