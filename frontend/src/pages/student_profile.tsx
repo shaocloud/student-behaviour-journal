@@ -20,7 +20,7 @@ import {
 
 import BehTable from "@/components/beh_table";
 
-import { useLoaderData } from "react-router";
+import { useLoaderData, useNavigation } from "react-router";
 
 class Student {
     id: string;
@@ -41,6 +41,12 @@ class Student {
 export default function StudentProfile()
 {
     const student = useLoaderData() as Student;
+    const nav = useNavigation();
+    const isNavigating = Boolean(nav.location);
+
+    if(isNavigating) {
+        return <p>Loading...</p>
+    }
 
     return(
         <div className="flex flex-col md:flex-row gap-4">
