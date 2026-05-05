@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "frontend": "pnpm --prefix frontend dev",
+    "backend": "pnpm --prefix express_api dev",
+    "dev": "concurrently --prefix \"[{name}]\" --names \"FE,BE\" --prefix-colors \"blue,magenta\" \"pnpm frontend\" \"pnpm backend\"",
+    "install:all": "pnpm i && pnpm i --prefix frontend && pnpm i --prefix express_api"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0"
+  }
+}
