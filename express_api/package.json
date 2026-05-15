@@ -1,6 +1,6 @@
 {
 	"scripts": {
-		"dev": "cd src && tsx server.tsx"
+		"dev": "cd src && tsx watch server.tsx"
 	},
 	"dependencies": {
 		"@aws-sdk/client-s3": "^3.1042.0",
