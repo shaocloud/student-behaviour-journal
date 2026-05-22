@@ -1,10 +1,10 @@
 import mongoose from 'mongoose';
 
-const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PWD}@${process.env.MONGO_HOST}/?appName=${process.env.MONGO_APPNAME}`;
+const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PWD}@${process.env.MONGO_HOST}/sample_mflix?appName=${process.env.MONGO_APPNAME}`;
 
 const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true } };
 
-async function run() {
+async function test_run() {
   try {
     // Create a Mongoose client with a MongoClientOptions object to set the Stable API version
     await mongoose.connect(uri);
@@ -15,6 +15,11 @@ async function run() {
     await mongoose.disconnect();
   }
 }
-run().catch(console.dir);
 
-export default run;
+async function connect()
+{
+  await mongoose.connect(uri);
+  return mongoose;
+}
+
+export { test_run, connect };
