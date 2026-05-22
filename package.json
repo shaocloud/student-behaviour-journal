@@ -1,4 +1,11 @@
 {
+  "name": "student-beh-tracker",
+  "private": true,
+  "workspaces": [
+    "common",
+    "express_api",
+    "frontend"
+  ],
   "scripts": {
     "frontend": "pnpm --prefix frontend dev",
     "backend": "pnpm --prefix express_api dev",

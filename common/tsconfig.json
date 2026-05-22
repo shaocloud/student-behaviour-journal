@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "node16",
+    "declaration": true,
+    "declarationMap": true,
+    "rootDir": ".",
+    "composite": true,
+    "strict": true,
+    "moduleResolution": "node16"
+  }
+}
